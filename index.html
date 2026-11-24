@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patel Ansh | Software Developer & AI Researcher | Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- html2pdf for Direct Client-side PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+    <!-- Ambient Background Lighting -->
+    <div class="ambient-glow bg-glow-1"></div>
+    <div class="ambient-glow bg-glow-2"></div>
+    <div class="ambient-glow bg-glow-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-brand">
+                <span class="brand-monogram">AP</span>
+                <div class="brand-info">
+                    <span class="brand-name">Patel Ansh</span>
+                    <span class="status-indicator">
+                        <span class="status-dot"></span> Open to Roles (2027)
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> About</a>
+                <a href="#projects" class="nav-link"><i class="fa-solid fa-code-fork"></i> Projects</a>
+                <a href="#skills" class="nav-link"><i class="fa-solid fa-layer-group"></i> Skills</a>
+                <a href="#experience" class="nav-link"><i class="fa-solid fa-timeline"></i> Timeline</a>
+                <a href="#resume" class="nav-link"><i class="fa-solid fa-file-lines"></i> Resume</a>
+                <a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+            </nav>
+
+            <!-- Nav Actions -->
+            <div class="nav-actions">
+                <button id="print-btn" class="btn btn-primary" title="Download Placement Resume (PDF)">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>Save PDF</span>
+                </button>
+                <button id="theme-toggle" class="btn btn-icon" title="Toggle Theme" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="mobile-menu-toggle" class="btn btn-icon mobile-only" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <a href="#about" class="mobile-link" onclick="closeMobileMenu()"><i class="fa-solid fa-user-astronaut"></i> About</a>
+        <a href="#projects" class="mobile-link" onclick="closeMobileMenu()"><i class="fa-solid fa-code-fork"></i> Projects</a>
+        <a href="#skills" class="mobile-link" onclick="closeMobileMenu()"><i class="fa-solid fa-layer-group"></i> Skills</a>
+        <a href="#experience" class="mobile-link" onclick="closeMobileMenu()"><i class="fa-solid fa-timeline"></i> Timeline</a>
+        <a href="#resume" class="mobile-link" onclick="closeMobileMenu()"><i class="fa-solid fa-file-lines"></i> Resume</a>
+        <a href="#contact" class="mobile-link" onclick="closeMobileMenu()"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="page-wrapper">
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <div class="hero-badge">
+                    <span class="badge-pulse"></span>
+                    <span>Software Developer &amp; AI Systems Researcher &bull; DDU IT '27</span>
+                </div>
+
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Ansh Patel</span>.<br>
+                    Building Scalable Systems &amp; Next-Gen AI.
+                </h1>
+
+                <div class="typewriter-container">
+                    <span class="typewriter-prefix">&gt; specializing in: </span>
+                    <span class="typewriter-text" id="typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
+                </div>
+
+                <p class="hero-description">
+                    Information Technology Engineering student at <strong>Dharmsinh Desai University (DDU)</strong>. 
+                    Proven track record of deploying and maintaining full-stack production platforms on <strong>AWS Lightsail for real-time clients (over 6+ months)</strong>, 
+                    and researching cutting-edge <strong>Test-Time Training (TTT)</strong> recurrent language models in PyTorch.
+                </p>
+
+                <!-- Hero Action CTAs -->
+                <div class="hero-cta-group">
+                    <a href="#projects" class="btn btn-primary btn-lg">
+                        <i class="fa-solid fa-rocket"></i> Explore Projects
+                    </a>
+                    <button onclick="triggerResumeDownload()" class="btn btn-secondary btn-lg">
+                        <i class="fa-solid fa-download"></i> Download Resume
+                    </button>
+                    <a href="#contact" class="btn btn-outline btn-lg">
+                        <i class="fa-regular fa-envelope"></i> Quick Connect
+                    </a>
+                </div>
+
+                <!-- Professional Profiles Row -->
+                <div class="profiles-strip">
+                    <span class="profiles-label">Verified Profiles:</span>
+                    <div class="profiles-list">
+                        <a href="https://github.com/apk3206" target="_blank" rel="noopener" class="profile-pill github">
+                            <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ansh-patel-322b2028a" target="_blank" rel="noopener" class="profile-pill linkedin">
+                            <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
+                        </a>
+                        <a href="https://leetcode.com/u/anshpatel032/" target="_blank" rel="noopener" class="profile-pill leetcode">
+                            <i class="fa-solid fa-code"></i> <span>LeetCode</span>
+                        </a>
+                        <a href="https://www.hackerrank.com/profile/anshpat032" target="_blank" rel="noopener" class="profile-pill hackerrank">
+                            <i class="fa-brands fa-hackerrank"></i> <span>HackerRank</span>
+                        </a>
+                        <a href="https://www.codechef.com/users/anshpat032" target="_blank" rel="noopener" class="profile-pill codechef">
+                            <i class="fa-solid fa-fire"></i> <span>CodeChef</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Live Metrics Bar -->
+                <div class="metrics-grid">
+                    <div class="metric-card glass-panel">
+                        <div class="metric-number">5+</div>
+                        <div class="metric-label">Full-Stack &amp; AI Systems</div>
+                        <div class="metric-detail">End-to-end built &amp; benchmarked</div>
+                    </div>
+                    <div class="metric-card glass-panel">
+                        <div class="metric-number">6+ <span class="unit">Months</span></div>
+                        <div class="metric-label">Real-Time Client Operations</div>
+                        <div class="metric-detail">Deployed live on AWS Lightsail</div>
+                    </div>
+                    <div class="metric-card glass-panel">
+                        <div class="metric-number">Top 950</div>
+                        <div class="metric-label">HackerRank Orchestrate</div>
+                        <div class="metric-detail">Rank #950 / 1,773 Global AI Hackathon</div>
+                    </div>
+                    <div class="metric-card glass-panel">
+                        <div class="metric-number">100+</div>
+                        <div class="metric-label">DSA Problems Solved</div>
+                        <div class="metric-detail">LeetCode &amp; Competitive Platforms</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Key Highlights Section -->
+        <section class="section-container" id="about">
+            <div class="section-header">
+                <span class="section-tag">ENGINEERING PROFILE</span>
+                <h2 class="section-title">About &amp; Core Competencies</h2>
+                <p class="section-subtitle">Combining rigorous software engineering fundamentals with hands-on AI model research.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card glass-panel">
+                    <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>Deep Learning &amp; LLM Architecture</h3>
+                    <p>
+                        Researching next-generation recurrent sequence models based on <strong>Test-Time Training (TTT)</strong> in PyTorch. 
+                        Trained and benchmarked <strong>TTT-Linear</strong> and <strong>TTT-E2E</strong> against a matched 31M Transformer baseline on TinyStories-v2 with custom training diagnostics.
+                    </p>
+                    <div class="card-tags">
+                        <span>PyTorch</span>
+                        <span>torch_ttt</span>
+                        <span>CUDA</span>
+                        <span>Transformers</span>
+                        <span>Streamlit</span>
+                    </div>
+                </div>
+
+                <div class="about-card glass-panel">
+                    <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3>Full-Stack &amp; Cloud Systems</h3>
+                    <p>
+                        Production-grade web application architecture featuring React 19, Node.js, Express v5, and FastAPI. 
+                        Engineered custom lightweight <strong>JWT token vaults</strong>, <strong>IP-based rate-limiting middleware</strong>, and automated financial transaction state synchronizers on <strong>AWS Lightsail</strong>.
+                    </p>
+                    <div class="card-tags">
+                        <span>React (v19)</span>
+                        <span>Express.js</span>
+                        <span>Node.js</span>
+                        <span>AWS Lightsail</span>
+                        <span>FastAPI</span>
+                    </div>
+                </div>
+
+                <div class="about-card glass-panel">
+                    <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>System Design &amp; Security</h3>
+                    <p>
+                        Deep understanding of Data Structures, Algorithms, Object-Oriented Design, and Database Management. 
+                        Practiced in implementing strict Indian PAN validation, XSS escaping sanitizers, and cryptographic hashing ledgers for audit assurance.
+                    </p>
+                    <div class="card-tags">
+                        <span>DSA</span>
+                        <span>System Design</span>
+                        <span>JWT Security</span>
+                        <span>XSS Defense</span>
+                        <span>DBMS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section with Interactive Filtering -->
+        <section class="section-container" id="projects">
+            <div class="section-header">
+                <span class="section-tag">PORTFOLIO WORK</span>
+                <h2 class="section-title">Featured Engineering Projects</h2>
+                <p class="section-subtitle">Real-world full-stack architectures, live client deployments, and deep learning implementations.</p>
+            </div>
+
+            <!-- Project Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All Projects (5)</button>
+                <button class="filter-btn" data-filter="ai">AI &amp; LLM Architecture (2)</button>
+                <button class="filter-btn" data-filter="fullstack">Full-Stack &amp; Cloud (2)</button>
+                <button class="filter-btn" data-filter="health">Healthcare &amp; AgTech (2)</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project 1: TTT Language Modeling -->
+                <div class="project-card glass-panel" data-category="ai">
+                    <div class="project-header-top">
+                        <span class="project-badge badge-ai"><i class="fa-solid fa-brain"></i> AI Architecture &bull; PyTorch</span>
+                        <span class="project-status-dot green" title="Benchmark Complete"></span>
+                    </div>
+                    <h3 class="project-name">Test-Time Training (TTT) Language Modeling</h3>
+                    <p class="project-tagline">TTT-Linear &amp; TTT-E2E Recurrent Sequence Model Architectures vs. 31M Baseline</p>
+                    <p class="project-summary">
+                        Replaced standard Transformer multi-head attention with online <strong>Test-Time Training (TTT)</strong> linear hidden-state models updated via gradient descent during inference. 
+                        Trained on TinyStories-v2 with AdamW (weight decay 0.1), cosine floor, and an interactive Streamlit inspector achieving ~5.2–5.4 validation PPL without representation collapse.
+                    </p>
+                    <div class="project-specs-highlights">
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> Matched 31M causal LM baseline comparison</div>
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> Integrated official <code>torch_ttt</code> package</div>
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> Real-time Streamlit token generation dashboard</div>
+                    </div>
+                    <div class="project-tech-pills">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">PyTorch</span>
+                        <span class="tech-pill">CUDA</span>
+                        <span class="tech-pill">torch_ttt</span>
+                        <span class="tech-pill">Streamlit</span>
+                        <span class="tech-pill">Kaggle T4</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <button class="btn btn-primary btn-sm" onclick="openProjectModal('ttt_lm')">
+                            <i class="fa-solid fa-circle-info"></i> Architecture Deep Dive
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Mudra Nivesh -->
+                <div class="project-card glass-panel" data-category="fullstack">
+                    <div class="project-header-top">
+                        <span class="project-badge badge-prod"><i class="fa-solid fa-cloud-arrow-up"></i> Live Clients &bull; AWS Lightsail</span>
+                        <span class="project-status-dot blue" title="Deployed 6+ Months"></span>
+                    </div>
+                    <h3 class="project-name">Mudra Nivesh — Mutual Funds &amp; Wealth Advisory Portal</h3>
+                    <p class="project-tagline">Client CRM, Lead-Gated Investment Calculators &amp; Transaction Processor</p>
+                    <p class="project-summary">
+                        Deployed and maintained a production wealth advisory web portal live on <strong>AWS Lightsail for real-time clients over a 6+ month engagement</strong>. 
+                        Architected an Express v5 backend with custom lightweight HMAC-SHA256 JWT authentication, IP-based rate-limiting security middleware, and automated client AUM updating engines.
+                    </p>
+                    <div class="project-specs-highlights">
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> 6+ Months live client operations on AWS Lightsail</div>
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> Custom JWT session key generator &amp; IP rate limiter</div>
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> Automated AUM recalculation on completed transactions</div>
+                    </div>
+                    <div class="project-tech-pills">
+                        <span class="tech-pill">React (v19)</span>
+                        <span class="tech-pill">Vite</span>
+                        <span class="tech-pill">TailwindCSS</span>
+                        <span class="tech-pill">Express.js (v5)</span>
+                        <span class="tech-pill">AWS Lightsail</span>
+                        <span class="tech-pill">JWT Security</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <button class="btn btn-primary btn-sm" onclick="openProjectModal('mudranivesh')">
+                            <i class="fa-solid fa-circle-info"></i> View System Specs
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: AI Car Damage Claim Detection -->
+                <div class="project-card glass-panel" data-category="ai">
+                    <div class="project-header-top">
+                        <span class="project-badge badge-hack"><i class="fa-solid fa-trophy"></i> HackerRank Orchestrate &bull; Top #950</span>
+                        <span class="project-status-dot green" title="Hackathon Awarded"></span>
+                    </div>
+                    <h3 class="project-name">AI Car Damage Claim Detection &amp; Verification System</h3>
+                    <p class="project-tagline">Multimodal Vision-Language Agent for Automated Insurance Claim Audits</p>
+                    <p class="project-summary">
+                        Engineered a multimodal VLM agent utilizing <code>gpt-4o-mini</code> to inspect car accident photos, customer conversational transcripts, and policy coverage history to verify damaged parts (bumpers, doors, windshields) and quantify severity with strict JSON output schemas.
+                    </p>
+                    <div class="project-specs-highlights">
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> Ranked #950 out of 1,773 global participants</div>
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> Single-Stage vs. Two-Stage VLM reasoning pipelines</div>
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> Local heuristic fallback algorithm achieving 95% accuracy</div>
+                    </div>
+                    <div class="project-tech-pills">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">OpenCV</span>
+                        <span class="tech-pill">gpt-4o-mini</span>
+                        <span class="tech-pill">OpenRouter API</span>
+                        <span class="tech-pill">VLM Agents</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <button class="btn btn-primary btn-sm" onclick="openProjectModal('orchestrate')">
+                            <i class="fa-solid fa-circle-info"></i> View System Specs
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4: Doctor's Friend -->
+                <div class="project-card glass-panel" data-category="health fullstack">
+                    <div class="project-header-top">
+                        <span class="project-badge badge-comm"><i class="fa-solid fa-user-doctor"></i> Clinic Practice Management</span>
+                        <span class="project-status-dot blue" title="Production Ready"></span>
+                    </div>
+                    <h3 class="project-name">Doctor's Friend — Practice Management &amp; Broadcast Suite</h3>
+                    <p class="project-tagline">Clinical Patient Records &amp; Zero-Cost Smart Messaging Engine</p>
+                    <p class="project-summary">
+                        Engineered a clinic management suite featuring appointment scheduling, diagnostic histories, and an intelligent <strong>Dual-Mode WhatsApp Broadcast Engine</strong> (Automated Twilio dispatches alongside a zero-cost manual queue via WhatsApp Web API link redirections).
+                    </p>
+                    <div class="project-specs-highlights">
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> Zero-cost WhatsApp Web URL pre-filled broadcast queue</div>
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> Clinical symptom and disease cohort filtering</div>
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> Full diagnostic and patient record audit trail</div>
+                    </div>
+                    <div class="project-tech-pills">
+                        <span class="tech-pill">React.js</span>
+                        <span class="tech-pill">Node.js</span>
+                        <span class="tech-pill">Express.js</span>
+                        <span class="tech-pill">MongoDB</span>
+                        <span class="tech-pill">Twilio WhatsApp</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <button class="btn btn-primary btn-sm" onclick="openProjectModal('doctorfriend')">
+                            <i class="fa-solid fa-circle-info"></i> View System Specs
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5: Khedut Bandhu -->
+                <div class="project-card glass-panel" data-category="health fullstack">
+                    <div class="project-header-top">
+                        <span class="project-badge badge-agri"><i class="fa-solid fa-seedling"></i> Agrarian Ecosystem &bull; CNN</span>
+                        <span class="project-status-dot green" title="Full Stack"></span>
+                    </div>
+                    <h3 class="project-name">Khedut Bandhu — Farmer's Digital Ecosystem &amp; AI Helper</h3>
+                    <p class="project-tagline">FastAPI CNN Crop Diagnostics &amp; APMC Direct Marketplace</p>
+                    <p class="project-summary">
+                        Constructed a comprehensive platform connecting rural farmers directly with crop buyers and agricultural experts. Integrated a Convolutional Neural Network (trained on PlantVillage) running on a Python FastAPI microservice for instant leaf photo disease diagnosis with treatment recommendations.
+                    </p>
+                    <div class="project-specs-highlights">
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> Python FastAPI CNN service for crop leaf diagnosis</div>
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> APMC commodity price ticker with simulated market trends</div>
+                        <div class="spec-item"><i class="fa-solid fa-check"></i> Digio Aadhaar KYC check and UPI QR refund workflows</div>
+                    </div>
+                    <div class="project-tech-pills">
+                        <span class="tech-pill">React.js</span>
+                        <span class="tech-pill">FastAPI</span>
+                        <span class="tech-pill">TensorFlow</span>
+                        <span class="tech-pill">MongoDB</span>
+                        <span class="tech-pill">Digio KYC</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <button class="btn btn-primary btn-sm" onclick="openProjectModal('khedutbandhu')">
+                            <i class="fa-solid fa-circle-info"></i> View System Specs
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Matrix Section -->
+        <section class="section-container" id="skills">
+            <div class="section-header">
+                <span class="section-tag">COMPETENCY MATRIX</span>
+                <h2 class="section-title">Technical Skills &amp; Frameworks</h2>
+                <p class="section-subtitle">Structured by domains of practical production experience and academic mastery.</p>
+            </div>
+
+            <!-- Key Skills Highlight Row -->
+            <div class="key-skills-strip glass-panel">
+                <div class="key-skill-item">
+                    <i class="fa-solid fa-code"></i>
+                    <div>
+                        <h4>Software Development</h4>
+                        <span>Production architectures, modular design &amp; maintainability</span>
+                    </div>
+                </div>
+                <div class="key-skill-item">
+                    <i class="fa-solid fa-network-wired"></i>
+                    <div>
+                        <h4>System Design &amp; Architecture</h4>
+                        <span>RESTful APIs, decoupled microservices &amp; state management</span>
+                    </div>
+                </div>
+                <div class="key-skill-item">
+                    <i class="fa-solid fa-bug"></i>
+                    <div>
+                        <h4>Problem Solving &amp; Debugging</h4>
+                        <span>Heuristic fallbacks, rate-limit handling &amp; DSA optimization</span>
+                    </div>
+                </div>
+                <div class="key-skill-item">
+                    <i class="fa-solid fa-database"></i>
+                    <div>
+                        <h4>Database Management</h4>
+                        <span>Schema design, indexing, transactions &amp; JSON DB vaults</span>
+                    </div>
+                </div>
+                <div class="key-skill-item">
+                    <i class="fa-solid fa-plug"></i>
+                    <div>
+                        <h4>API Development &amp; Integration</h4>
+                        <span>Twilio, OpenAI, Digio KYC, WebSockets &amp; Payment UPI</span>
+                    </div>
+                </div>
+                <div class="key-skill-item">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <div>
+                        <h4>Performance Optimization</h4>
+                        <span>AdamW weight decay, memory scaling &amp; token latency</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Skills Matrix Grid -->
+            <div class="skills-matrix-grid">
+                <div class="skill-category-card glass-panel">
+                    <div class="category-header">
+                        <i class="fa-solid fa-brain"></i>
+                        <h3>AI &amp; Machine Learning</h3>
+                    </div>
+                    <div class="skill-items-list">
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">PyTorch &amp; CUDA</span>
+                                <span class="skill-badge">Advanced</span>
+                            </div>
+                            <span class="skill-context">Used in TTT-Linear &amp; TTT-E2E training</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">Test-Time Training (TTT)</span>
+                                <span class="skill-badge">Research</span>
+                            </div>
+                            <span class="skill-context">Sequence modeling &amp; online gradient updates</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">Transformers &amp; VLMs</span>
+                                <span class="skill-badge">Practiced</span>
+                            </div>
+                            <span class="skill-context">gpt-4o-mini structured schemas &amp; multimodal claims</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">OpenCV &amp; TensorFlow</span>
+                                <span class="skill-badge">Practiced</span>
+                            </div>
+                            <span class="skill-context">Computer vision &amp; CNN plant disease diagnostics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card glass-panel">
+                    <div class="category-header">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <h3>Programming Languages</h3>
+                    </div>
+                    <div class="skill-items-list">
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-badge">Core</span>
+                            </div>
+                            <span class="skill-context">Deep learning, PyTorch, FastAPI &amp; scripting</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">C++</span>
+                                <span class="skill-badge">Core</span>
+                            </div>
+                            <span class="skill-context">DSA problem solving &amp; competitive programming</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">JavaScript (ES6+)</span>
+                                <span class="skill-badge">Core</span>
+                            </div>
+                            <span class="skill-context">Full-stack web, asynchronous Node.js &amp; DOM</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">Java &amp; SQL</span>
+                                <span class="skill-badge">Proficient</span>
+                            </div>
+                            <span class="skill-context">Object-oriented engineering &amp; relational queries</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card glass-panel">
+                    <div class="category-header">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <h3>Web &amp; Backend Engineering</h3>
+                    </div>
+                    <div class="skill-items-list">
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">React.js (v19) &amp; Vite</span>
+                                <span class="skill-badge">Production</span>
+                            </div>
+                            <span class="skill-context">Component architecture, custom hooks &amp; Tailwind</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">Node.js &amp; Express.js (v5)</span>
+                                <span class="skill-badge">Production</span>
+                            </div>
+                            <span class="skill-context">REST API endpoints, JWT vaults &amp; rate limiting</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">FastAPI &amp; Streamlit</span>
+                                <span class="skill-badge">Practiced</span>
+                            </div>
+                            <span class="skill-context">Python model microservices &amp; live ML web apps</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">MongoDB &amp; PostgreSQL</span>
+                                <span class="skill-badge">Proficient</span>
+                            </div>
+                            <span class="skill-context">Document models, JSON DBs &amp; relational schemas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card glass-panel">
+                    <div class="category-header">
+                        <i class="fa-solid fa-cloud"></i>
+                        <h3>Cloud, DevOps &amp; CS Core</h3>
+                    </div>
+                    <div class="skill-items-list">
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">AWS Lightsail</span>
+                                <span class="skill-badge">Live Ops</span>
+                            </div>
+                            <span class="skill-context">6+ Months hosting live client portfolios</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">AWS Cloud Foundations</span>
+                                <span class="skill-badge">Certified</span>
+                            </div>
+                            <span class="skill-context">EC2, RDS, IAM &amp; Cloud architecture</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">Git &amp; GitHub</span>
+                                <span class="skill-badge">Workflow</span>
+                            </div>
+                            <span class="skill-context">Version control, branch workflows &amp; releases</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-meta">
+                                <span class="skill-name">Core CS (DSA, OOP, OS)</span>
+                                <span class="skill-badge">Foundational</span>
+                            </div>
+                            <span class="skill-context">Strong algorithm optimization &amp; OS memory design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Timeline Section -->
+        <section class="section-container" id="experience">
+            <div class="section-header">
+                <span class="section-tag">JOURNEY &bull; TRACK RECORD</span>
+                <h2 class="section-title">Experience &amp; Education Timeline</h2>
+                <p class="section-subtitle">Real-world commercial engagements, research milestones, and academic foundation.</p>
+            </div>
+
+            <div class="timeline-container">
+                <!-- Timeline Item 1: Mudra Nivesh -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"><i class="fa-solid fa-briefcase"></i></div>
+                    <div class="timeline-content glass-panel">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Full-Stack Developer (Client Deployment)</h3>
+                                <span class="timeline-company">Mudra Nivesh — Mutual Funds &amp; Wealth Advisory</span>
+                            </div>
+                            <span class="timeline-badge">6+ Months Live Operations</span>
+                        </div>
+                        <p class="timeline-text">
+                            Configured, deployed, and maintained the production web portal live on <strong>AWS Lightsail</strong> for real-time clients. 
+                            Built custom HMAC-SHA256 JWT session authentication, IP rate-limiting defense, and automated client AUM / transaction synchronization engines.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>AWS Lightsail</span>
+                            <span>React 19</span>
+                            <span>Express.js</span>
+                            <span>JWT Vault</span>
+                            <span>Rate Limiting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2: TTT Research -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"><i class="fa-solid fa-atom"></i></div>
+                    <div class="timeline-content glass-panel">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Deep Learning &amp; LLM Architecture Researcher</h3>
+                                <span class="timeline-company">Test-Time Training (TTT) Language Modeling</span>
+                            </div>
+                            <span class="timeline-badge">PyTorch Research</span>
+                        </div>
+                        <p class="timeline-text">
+                            Researched next-generation recurrent sequence modeling by implementing TTT-Linear and TTT-E2E PyTorch architectures. 
+                            Benchmarked against a matched 31M parameter baseline on TinyStories-v2, tuning AdamW weight decay (0.1) and building an interactive Streamlit inspector.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>PyTorch</span>
+                            <span>TTT-Linear</span>
+                            <span>torch_ttt</span>
+                            <span>CUDA</span>
+                            <span>Streamlit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3: HackerRank Orchestrate -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"><i class="fa-solid fa-trophy"></i></div>
+                    <div class="timeline-content glass-panel">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Global Finalist — AI Agent Hackathon</h3>
+                                <span class="timeline-company">HackerRank Orchestrate (June 2026 Edition)</span>
+                            </div>
+                            <span class="timeline-badge">Rank #950 / 1,773</span>
+                        </div>
+                        <p class="timeline-text">
+                            Built and deployed a multimodal AI car damage claim verification agent. 
+                            Compared Single-Stage vs. Two-Stage VLM reasoning pipelines and implemented local heuristic fallbacks achieving 95.00% accuracy under strict API rate limits.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>VLM Agents</span>
+                            <span>gpt-4o-mini</span>
+                            <span>OpenCV</span>
+                            <span>Structured JSON</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4: Education DDU -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="timeline-content glass-panel">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Bachelor of Engineering in Information Technology</h3>
+                                <span class="timeline-company">Dharmsinh Desai University (DDU), Nadiad, Gujarat</span>
+                            </div>
+                            <span class="timeline-badge">Graduation: 2027</span>
+                        </div>
+                        <p class="timeline-text">
+                            Core coursework: Data Structures &amp; Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, and System Architecture.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>Data Structures &amp; Algorithms</span>
+                            <span>OOP</span>
+                            <span>DBMS</span>
+                            <span>Operating Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrated Formal Placement Resume Section (A1 ATS Standard) -->
+        <section class="section-container" id="resume">
+            <div class="section-header">
+                <span class="section-tag">PLACEMENT READY</span>
+                <h2 class="section-title">Official Placement Resume</h2>
+                <p class="section-subtitle">ATS-optimized single A4 document. Click "Save PDF" above or below for immediate file download.</p>
+            </div>
+
+            <!-- Resume Download Action Banner -->
+            <div class="resume-download-banner glass-panel">
+                <div class="banner-text">
+                    <h3><i class="fa-solid fa-file-pdf"></i> Download Official Resume PDF</h3>
+                    <p>Standardized, recruiter-friendly A4 format with verified project metrics and credentials.</p>
+                </div>
+                <button onclick="triggerResumeDownload()" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-arrow-down-to-bracket"></i> Download PDF (Patel_Ansh_Resume.pdf)
+                </button>
+            </div>
+
+            <!-- Embed Formal Resume Container (also target for print engine) -->
+            <div class="resume-sheet-container" id="printable-resume">
+                <div class="resume-doc">
+                    <header class="doc-header">
+                        <h1 class="doc-name">PATEL ANSH KINJALKRUSHNA</h1>
+                        <div class="doc-contact-line">
+                            <span><strong>Phone:</strong> +91 9428456272</span> &bull;
+                            <span><strong>Email:</strong> anshpat032@gmail.com</span> &bull;
+                            <span><strong>Location:</strong> Gujarat, India</span>
+                        </div>
+                        <div class="doc-links-line">
+                            <a href="https://www.linkedin.com/in/ansh-patel-322b2028a" target="_blank">linkedin.com/in/ansh-patel-322b2028a</a> &bull;
+                            <a href="https://github.com/apk3206" target="_blank">github.com/apk3206</a> &bull;
+                            <a href="https://leetcode.com/u/anshpatel032/" target="_blank">leetcode.com/u/anshpatel032</a> &bull;
+                            <a href="https://www.hackerrank.com/profile/anshpat032" target="_blank">hackerrank.com/profile/anshpat032</a>
+                        </div>
+                    </header>
+
+                    <div class="doc-section">
+                        <h2 class="doc-section-title">PROFESSIONAL SUMMARY</h2>
+                        <p class="doc-text">
+                            Software Developer and IT Engineering student at Dharmsinh Desai University with experience in building web-based applications, digital systems, and deep learning architectures. Skilled in developing efficient, structured, and scalable full-stack solutions, with a track record of deploying production portals for real-time clients (over 6+ months) on AWS Lightsail and researching cutting-edge Test-Time Training (TTT) language model architectures in PyTorch. Strong in problem solving, system analysis, and feature development, with the ability to work independently and collaboratively in a team environment.
+                        </p>
+                    </div>
+
+                    <div class="doc-section">
+                        <h2 class="doc-section-title">EDUCATION</h2>
+                        <div class="doc-item">
+                            <div class="doc-item-header">
+                                <span class="doc-item-title">Bachelor of Engineering in Information Technology</span>
+                                <span class="doc-item-date">Graduation: 2027</span>
+                            </div>
+                            <div class="doc-item-sub">Dharmsinh Desai University (DDU), Nadiad, Gujarat</div>
+                        </div>
+                    </div>
+
+                    <div class="doc-section">
+                        <h2 class="doc-section-title">KEY SKILLS</h2>
+                        <p class="doc-text">
+                            <strong>Software Development</strong> &bull; <strong>System Design &amp; Architecture</strong> &bull; <strong>Problem Solving &amp; Debugging</strong> &bull; <strong>Database Management</strong> &bull; <strong>API Development &amp; Integration</strong> &bull; <strong>Performance Optimization</strong>
+                        </p>
+                    </div>
+
+                    <div class="doc-section">
+                        <h2 class="doc-section-title">TECHNICAL SKILLS</h2>
+                        <ul class="doc-bullet-list">
+                            <li><strong>Languages:</strong> Python, C++, Java, JavaScript (ES6+), SQL, HTML5, CSS3</li>
+                            <li><strong>AI &amp; Deep Learning:</strong> PyTorch, CUDA, Test-Time Training (TTT), Transformers, OpenCV, TensorFlow/Keras</li>
+                            <li><strong>Web &amp; Frameworks:</strong> React.js (v19), Node.js, Express.js (v5), FastAPI (Python), Streamlit</li>
+                            <li><strong>Databases &amp; Cloud:</strong> MongoDB, PostgreSQL, SQLite, JSON DB, AWS Lightsail, AWS Cloud Foundations</li>
+                            <li><strong>Tools &amp; CS Concepts:</strong> Git/GitHub, VS Code, Postman, DSA, OOP, DBMS, OS, JWT Security, Cryptographic Hashing</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-section">
+                        <h2 class="doc-section-title">PROJECTS</h2>
+
+                        <div class="doc-project">
+                            <div class="doc-project-header">
+                                <span class="doc-project-title">1. Test-Time Training (TTT) Language Modeling — TTT-Linear &amp; TTT-E2E</span>
+                                <span class="doc-project-tech">PyTorch, CUDA, torch_ttt, Transformers, Streamlit</span>
+                            </div>
+                            <ul class="doc-bullet-list">
+                                <li>Implemented next-generation recurrent sequence models based on <strong>Test-Time Training (TTT)</strong>, replacing static multi-head attention with online linear hidden-state models updated via gradient descent during inference.</li>
+                                <li>Researched and trained both <strong>TTT-Linear</strong> and <strong>TTT-E2E</strong> PyTorch architectures against a matched <strong>31M parameter causal LM baseline</strong> (512d, 8 layers, 8 heads, SwiGLU 1536) on TinyStories-v2.</li>
+                                <li>Formulated an end-to-end training pipeline with <strong>AdamW decoupled weight decay (0.1)</strong>, warmup cosine decay, and validation metrics (PPL ~5.2–5.4, token match ~60%) preventing representation collapse.</li>
+                                <li>Integrated official PyTorch <code>torch_ttt</code> modules for Kaggle T4 GPU training, and engineered an interactive <strong>Streamlit dashboard</strong> for real-time text generation and hidden-state inspection.</li>
+                            </ul>
+                        </div>
+
+                        <div class="doc-project">
+                            <div class="doc-project-header">
+                                <span class="doc-project-title">2. Mudra Nivesh — Mutual Funds &amp; Wealth Advisory Portal</span>
+                                <span class="doc-project-tech">React (v19), Vite, Express.js (v5), AWS Lightsail, JWT</span>
+                            </div>
+                            <ul class="doc-bullet-list">
+                                <li>Deployed and operated the wealth advisory web portal live on <strong>AWS Lightsail for real-time clients over a 6+ month engagement</strong>, linking a React frontend with an Express API backend.</li>
+                                <li>Programmed a custom <strong>lightweight JWT Authentication &amp; Session verification</strong> module for secure partner access, enforcing auto-expiring 12-hour session keys.</li>
+                                <li>Engineered security middleware including <strong>IP-based Rate-Limiting controls</strong> and strict <strong>XSS input sanitization</strong> to secure public lead collection forms against injection and spam.</li>
+                                <li>Built an automated transactional tracking engine that dynamically updates client <strong>Assets Under Management (AUM)</strong> and transaction histories when orders transition to completed states.</li>
+                            </ul>
+                        </div>
+
+                        <div class="doc-project">
+                            <div class="doc-project-header">
+                                <span class="doc-project-title">3. AI Car Damage Claim Detection &amp; Verification System</span>
+                                <span class="doc-project-tech">Python, OpenCV, OpenAI API (gpt-4o-mini), OpenRouter</span>
+                            </div>
+                            <ul class="doc-bullet-list">
+                                <li>Engineered a multimodal AI car damage claim validation agent utilizing vision-language models (<code>gpt-4o-mini</code>) to detect and evaluate car damage claims (bumper scratches, body dents, severity) with strict JSON schemas.</li>
+                                <li>Ranked <strong>#950 out of 1,773 global developers</strong> in the HackerRank Orchestrate AI Hackathon.</li>
+                                <li>Built local heuristic fallback algorithms achieving <strong>95.00% accuracy</strong> on claim status and car part classification under strict API rate limits.</li>
+                            </ul>
+                        </div>
+
+                        <div class="doc-project">
+                            <div class="doc-project-header">
+                                <span class="doc-project-title">4. Doctor's Friend — Clinic Practice Management System</span>
+                                <span class="doc-project-tech">React.js, Node.js, Express.js, MongoDB, Twilio WhatsApp</span>
+                            </div>
+                            <ul class="doc-bullet-list">
+                                <li>Developed a comprehensive clinic portal supporting clinical appointment tracking, patient histories, and an intelligent <strong>Dual-Mode WhatsApp Broadcast Module</strong>.</li>
+                                <li>Programmed <strong>Automated Mode</strong> using Twilio WhatsApp API and a <strong>Manual Queue Mode</strong> using free WhatsApp Web URL redirections for zero-cost alerts.</li>
+                            </ul>
+                        </div>
+
+                        <div class="doc-project">
+                            <div class="doc-project-header">
+                                <span class="doc-project-title">5. Khedut Bandhu — Agrarian Digital Companion</span>
+                                <span class="doc-project-tech">React.js, FastAPI (Python), TensorFlow/Keras, Digio KYC</span>
+                            </div>
+                            <ul class="doc-bullet-list">
+                                <li>Built a Python FastAPI service loaded with a Convolutional Neural Network (CNN on PlantVillage) to evaluate uploaded crop leaf photos for instant disease diagnostics.</li>
+                                <li>Created an APMC agricultural marketplace displaying live commodity tickers with simulated price trends to shield farmers from intermediate broker margins.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="doc-section">
+                        <h2 class="doc-section-title">CERTIFICATIONS &amp; ACHIEVEMENTS</h2>
+                        <ul class="doc-bullet-list">
+                            <li><strong>HackerRank Orchestrate Certificate (June 2026):</strong> Ranked #950 / 1,773 globally for multimodal AI agent evaluation.</li>
+                            <li><strong>AWS Cloud Computing Coursework Certificate:</strong> Training in EC2, RDS, IAM, S3, and Cloud Foundations.</li>
+                            <li><strong>LeetCode Profile:</strong> Solved 100+ Data Structures &amp; Algorithms problems across arrays, two-pointers, and search.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recruiter Connect & Contact Section -->
+        <section class="section-container" id="contact">
+            <div class="section-header">
+                <span class="section-tag">LET'S CONNECT</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Interested in discussing opportunities, roles, or software engineering collaborations?</p>
+            </div>
+
+            <div class="contact-grid-main">
+                <div class="contact-card glass-panel" onclick="copyContact('phone', '+919428456272')">
+                    <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="contact-card-body">
+                        <h4>Phone Number</h4>
+                        <span class="contact-val">+91 9428456272</span>
+                        <span class="copy-hint"><i class="fa-regular fa-copy"></i> Click to copy</span>
+                    </div>
+                </div>
+
+                <div class="contact-card glass-panel" onclick="copyContact('email', 'anshpat032@gmail.com')">
+                    <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="contact-card-body">
+                        <h4>Email Address</h4>
+                        <span class="contact-val">anshpat032@gmail.com</span>
+                        <span class="copy-hint"><i class="fa-regular fa-copy"></i> Click to copy</span>
+                    </div>
+                </div>
+
+                <div class="contact-card glass-panel">
+                    <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="contact-card-body">
+                        <h4>Location</h4>
+                        <span class="contact-val">Gujarat, India</span>
+                        <span class="copy-hint">Open to Remote &amp; On-Site</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direct Mail Composer CTA -->
+            <div class="quick-email-box glass-panel">
+                <div class="email-box-text">
+                    <h3><i class="fa-solid fa-bolt"></i> Fast Recruiter Connect</h3>
+                    <p>Click below to open your email client with a pre-filled interview invitation template.</p>
+                </div>
+                <a href="mailto:anshpat032@gmail.com?subject=Interview%20Invitation%20-%20Software%20Developer%20Role&body=Hi%20Ansh%2C%0A%0AWe%20reviewed%20your%20portfolio%20and%20resume%20and%20would%20like%20to%20connect%20with%20you%20regarding%20an%20opportunity%20at%20our%20company.%0A%0ABest%20regards%2C" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-paper-plane"></i> Send Direct Email
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Patel Ansh. Engineered with clean modular code &bull; Hosted on Netlify</p>
+            <div class="footer-links">
+                <a href="https://github.com/apk3206" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ansh-patel-322b2028a" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://leetcode.com/u/anshpatel032/" target="_blank" rel="noopener"><i class="fa-solid fa-code"></i></a>
+                <a href="https://www.hackerrank.com/profile/anshpat032" target="_blank" rel="noopener"><i class="fa-brands fa-hackerrank"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Project Details Modal -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-dialog glass-panel">
+            <button class="modal-close" onclick="closeProjectModal()" aria-label="Close Modal">&times;</button>
+            <div id="modal-body-content">
+                <!-- Dynamically Populated by script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-popup" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

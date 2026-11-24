@@ -1,0 +1,20 @@
+const express = require('express');
+const path = require('path');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Serve static assets from current directory
+app.use(express.static(__dirname));
+
+// Route request to index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.listen(PORT, () => {
+    console.log(`====================================================`);
+    console.log(`  Patel Ansh - Placement Resume Portfolio Available!`);
+    console.log(`  Local URL: http://localhost:${PORT}                `);
+    console.log(`  Press Ctrl+C to terminate the server.              `);
+    console.log(`====================================================`);
+});
